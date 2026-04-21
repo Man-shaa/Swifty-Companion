@@ -25,7 +25,8 @@ Swifty Companion is a mobile project at 42 that introduces students to mobile de
    SECRET=your_secret_here
 4. Run the app:
 
-**Example for Flutter**
+**Example for Flutter** :
+
 ```flutter run```
 
 ## Error Handling
