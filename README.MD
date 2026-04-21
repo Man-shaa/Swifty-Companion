@@ -26,7 +26,7 @@ Swifty Companion is a mobile project at 42 that introduces students to mobile de
 4. Run the app:
 
 # Example for Flutter
-flutter run
+```flutter run```
 
 ## Error Handling
 
