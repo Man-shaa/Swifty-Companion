@@ -5,10 +5,10 @@ import 'services/api_service.dart';
 Future<void> main() async {
   // 1. Ensure Flutter bindings are initialized
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   // 2. Load environment variables
-  await dotenv.load(fileName: ".env");
-  
+  await dotenv.load();
+
   runApp(const MyApp());
 }
 
@@ -17,9 +17,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: const TestConnectionScreen(),
-    );
+    return MaterialApp(home: const TestConnectionScreen());
   }
 }
 
@@ -37,10 +35,10 @@ class _TestConnectionScreenState extends State<TestConnectionScreen> {
   void _testConnection() async {
     setState(() => _status = "Fetching token...");
     String? token = await _apiService.getAccessToken();
-    
+
     setState(() {
-      _status = (token != null) 
-          ? "Success! Check your terminal." 
+      _status = (token != null)
+          ? "Success! Check your terminal."
           : "Failed to fetch token.";
     });
   }
@@ -56,7 +54,7 @@ class _TestConnectionScreenState extends State<TestConnectionScreen> {
             Text(_status),
             const SizedBox(height: 20),
             ElevatedButton(
-              onPressed: _testConnection, 
+              onPressed: _testConnection,
               child: const Text("Get Access Token"),
             ),
           ],
